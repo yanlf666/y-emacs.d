@@ -1,5 +1,11 @@
 
 
+;;需要PACK安装：
+;;1:sr-speedbar
+;;2:auto-complete
+;;3:rainbow-delimiters
+
+
 ;;elpa插件包安装地址
 ;;(require 'package)
 ;;(add-to-list 'package-archives
