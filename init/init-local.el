@@ -1,5 +1,7 @@
 
 
+(global-set-key "\C-h" 'backward-delete-char-untabify)  
+(global-set-key "\d" 'delete-char)  
 ;;状态栏显示行列信息
 (column-number-mode t)
 ;;15妙无动作自动保存
