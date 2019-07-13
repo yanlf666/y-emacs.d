@@ -17,21 +17,11 @@
 (load "elpa.el")
 
 (add-to-list 'load-path "~/y-emacs.d/init/")
-(load "init-local.el")
+
 
 (add-to-list 'load-path "~/y-emacs.d/theme/")
 
-;;(load  "zenburn-theme.el")
-;;(load-theme 'misterioso t)
-(load "dracula-theme.el")
-;;(load "ample-zen.el")
-;;(load "material-light-theme.el")
-;;(load "material-theme.el")
-;;(load "monokai-theme.el")
-;;(load "ujelly-theme.el")
+(load "init-local.el")
 
-;;(load "afternoon-theme.el")
-;;(load "noctilux-theme.el")
-;;(load "hc-zenburn-theme.el")
-;;(load "seti-theme")
 
+(load "labburn-theme-source-code.el")
