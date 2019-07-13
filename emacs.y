@@ -17,11 +17,9 @@
 (load "elpa.el")
 
 (add-to-list 'load-path "~/y-emacs.d/init/")
-
+(load "init-local.el")
 
 (add-to-list 'load-path "~/y-emacs.d/theme/")
-
-(load "init-local.el")
 
 
 (load "labburn-theme-source-code.el")

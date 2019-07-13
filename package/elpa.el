@@ -4,6 +4,9 @@
 	     '("melpa" . "http://elpa.emacs-china.org/melpa/") t)
 (package-initialize)
 
+;;自动补全C关键字auto-complete
+(ac-config-default)
+
 
 ;;(add-to-list 'load-path "~/.emacs.d/elpa/neotree-20181121.2026/")
 ;;(require 'neotree)
@@ -29,8 +32,7 @@
 
 
 
-;;自动补全C关键字auto-complete
-(ac-config-default)
+
 
 
 ;;彩虹括号
