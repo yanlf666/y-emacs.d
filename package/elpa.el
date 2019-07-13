@@ -9,17 +9,22 @@
 ;;(require 'neotree)
 ;;(add-hook 'after-init-hook '(lambda () (neotree-toggle)))
 
+;;(add-to-list 'load-path "~/.emacs.d/elpa/neotree/")
+;;(require 'neotree)
+;;(add-hook 'after-init-hook '(lambda () (neotree-toggle)))
 
 ;;目录树配置
-(require 'sr-speedbar)
-(setq sr-speedbar-right-side nil)
-(setq sr-speedbar-width 25)
-;;(setq dframe-update-sr-speedbar t)
-(add-hook 'after-init-hook '(lambda () (sr-speedbar-toggle)))
+;;(require 'sr-speedbar)
+;;(setq sr-speedbar-width 18)
+;;(add-hook 'after-init-hook '(lambda () (sr-speedbar-toggle)))
+
+
+
+;;(setq sr-speedbar-right-side nil)
 ;;(global-set-key (kbd "<f2>") (lambda()
 ;;          (interactive)
 ;;          (sr-speedbar-toggle)))
-
+;;(setq dframe-update-sr-speedbar t)
 
 
 
