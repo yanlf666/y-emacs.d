@@ -1,5 +1,12 @@
 
 
+;;窗口大小
+(setq default-frame-alist
+      '((height . 18) (width . 100) (menu-bar-lines . 8) (tool-bar-lines . 8)))
+
+
+
+
 ;;(global-set-key "\C-h" 'backward-delete-char-untabify)  
 ;;(global-set-key "\d" 'delete-char)  
 ;;状态栏显示行列信息
