@@ -2,7 +2,7 @@
 
 ;;窗口大小
 (setq default-frame-alist
-      '((height . 18) (width . 100) (menu-bar-lines . 8) (tool-bar-lines . 8)))
+      '((height . 20) (width . 60) (menu-bar-lines . 8) (tool-bar-lines . 8)))
 
 
 
