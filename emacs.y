@@ -19,6 +19,9 @@
 (add-to-list 'load-path "~/y-emacs.d/init/")
 (load "init-local.el")
 
+(add-to-list 'load-path "~/y-emacs.d/org-mode/")
+(load "org-mode.el")
+
 (add-to-list 'load-path "~/y-emacs.d/theme/")
 
 
