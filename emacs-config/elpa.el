@@ -1,3 +1,7 @@
+
+
+;; elpa.el
+
 ;;elpa插件包安装地址
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://elpa.emacs-china.org/melpa-stable/") t )
@@ -40,11 +44,12 @@
 		:with company-files
        		:with company-dabbrev
 		:with company-dabbrev-code
+		:with company-elisp
 		:with company-keywords
 		))
 
 ;;关闭flymake 使用flycheck
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;;(add-hook 'after-init-hook #'global-flycheck-mode)
 
 
 
@@ -73,3 +78,5 @@
 ;;自动补全C关键字auto-complete
 ;;(ac-config-default)
 ;;(setq ac-auto-start 1)
+
+(provide 'elpa)

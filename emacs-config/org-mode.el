@@ -1,4 +1,7 @@
 
+
+;; org-mode.el
+
 ;;缩进
 (setq org-startup-indented t)
 
@@ -24,3 +27,4 @@
 ;;#+END_SRC
 
 
+(provide 'org-mode)
