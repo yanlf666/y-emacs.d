@@ -1,11 +1,15 @@
 
 
 ;;窗口大小
-(setq default-frame-alist
-      '((height . 20) (width . 60) (menu-bar-lines . 8) (tool-bar-lines . 8)))
+;;(setq default-frame-alist
+;;      '((height . 20) (width . 60) (menu-bar-lines . 8) (tool-bar-lines . 8)))
+;;设置窗口位置为屏库左上角(0,0)
+(set-frame-position (selected-frame) 300 300)
+;;设置宽和高,我的十寸小本是110,33,大家可以调整这个参数来适应自己屏幕大小
+(set-frame-width (selected-frame) 60)
+(set-frame-height (selected-frame) 20)
 
-
-
+(setq command-line-default-directory "/home/y/y-msp430-c/" )
 
 ;;(global-set-key "\C-h" 'backward-delete-char-untabify)  
 ;;(global-set-key "\d" 'delete-char)  
@@ -31,7 +35,7 @@
 (show-paren-mode 1)
 
 ;;当前行高亮
-;;(global-hl-line-mode 1)
+(global-hl-line-mode 1)
 
 ;;行号
 (global-linum-mode t)

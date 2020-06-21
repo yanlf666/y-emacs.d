@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 YEAR_MON_DAY=$(date -d "yesterday" +"%Y-%m-%d-%T-%j-%V")  
 
