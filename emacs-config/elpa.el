@@ -4,24 +4,29 @@
 
 ;;elpa插件包安装地址
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://elpa.emacs-china.org/melpa-stable/") t )
+;;(add-to-list 'package-archives '("melpa" . "http://elpa.emacs-china.org/melpa-stable/") t )
+(setq package-archives '(
+			("gnu" . "http://mirrors.ustc.edu.cn/elpa/gnu/")
+                       	("melpa" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
+;;                    	 ("melpa-stable" . "http://mirrors.ustc.edu.cn/elpa/melpa-stable/")
+;;                       ("org" . "http://mirrors.ustc.edu.cn/elpa/org/")
+))
 (package-initialize)
 
 
 ;;company
 ;;rainbow-delimiters
-;; flycheck 
 ;; helm
-
-
 
 ;;彩虹括号
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
-(helm-mode 1)
-(require 'helm)
-(global-set-key (kbd "M-x") 'helm-M-x)
+;;(helm-mode 1)
+;;(require 'helm)
+;;(global-set-key (kbd "M-x") 'helm-M-x)
+
+
 
 ;; company-mode config
 ;;要查看或更改已启用的后端列表，请键入 M-x customize-variable RET company-backends 
@@ -38,15 +43,18 @@
 ;; 显示数字
 (setq company-show-numbers t)
 ;; 补全后端使用 组合后端 ：with
-(add-to-list 'company-backends 
-	     '(
-		company-clang
-		:with company-files
-       		:with company-dabbrev
-		:with company-dabbrev-code
-		:with company-elisp
-		:with company-keywords
-		))
+;;(add-to-list 'company-backends 
+;;	     '(
+;;	       company-clang
+;;	        :with company-keywords
+;;		:with company-files          ;; 文件路径补全
+;;      		:with company-dabbrev        ;; 本缓存内出现过的单词
+;;		:with company-dabbrev-code
+;;		:with company-elisp          ;; elisp补全
+;;		;;:with company-keywords       ;; 补全字典
+;;		))
+
+
 
 ;;关闭flymake 使用flycheck
 ;;(add-hook 'after-init-hook #'global-flycheck-mode)

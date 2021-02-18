@@ -50,14 +50,18 @@
      "union" "unsigned" "using" "virtual" "void" "volatile" "wchar_t" "while")
 
     (c-mode
-
+    
+     "yanl" 
+     "\< \>"
      ;;MSP430 寄存器名
      ;;CSCTL0
      "CSCTL0_H" "CSKEY"
+     
      ;;CSCTL1
      "CSCTL1" "DCORSEL"
      "DCOFSEL_0" "DCOFSEL_1" "DCOFSEL_2" "DCOFSEL_3"
-     "DCOFSEL_4" "DCOFSEL_5" "DCOFSEL_6" "DCOFSEL_7" 
+     "DCOFSEL_4" "DCOFSEL_5" "DCOFSEL_6" "DCOFSEL_7"
+     
      ;;CSCTL2
      "CSCTL2"
      "SELA__ACLK" "SELA__LFXTCLK" "SELA__VLOCLK" "SELA__LFMODCLK"
@@ -65,11 +69,13 @@
      "SELS__DCOCLK" "SELS__MODCLK" "SELS__HFXTCLK"
      "SELM__MCLK" "SELM__LFXTCLK" "SELM__VLOCLK" "SELM__LFMODCLK"
      "SELM__DCOCLK" "SELM__MODCLK" "SELM__HFXTCLK"
+     
      ;;CSCTL3
      "CSCTL3"
      "DIVA__1" "DIVA__2" "DIVA__3" "DIVA__4" "DIVA__5" "DIVA__6" 
      "DIVS__1" "DIVS__2" "DIVS__3" "DIVS__4" "DIVS__5" "DIVS__6"
      "DIVM__1" "DIVM__2" "DIVM__3" "DIVM__4" "DIVM__5" "DIVM__6"
+     
      ;;CSCTL4
      "CSCTL4"
      "HFXTDRIVE_1" "HFXTDRIVE_2" "HFXTDRIVE_3" "HFXTDRIVE_4"
@@ -81,6 +87,7 @@
      "VLOOFF"
      "SMCLKOFF"
      "LFXTOFF"
+     
      ;;CSCTL5
      "CSCTL5"
      "ENSTFCNT2"
@@ -88,6 +95,7 @@
      "SWDONE"
      "HFXTOFFG"
      "LFXTOFFG"
+     
      ;;CSCTL6
      "CSCTL6"
      "MODCLKREQEN"
@@ -104,6 +112,7 @@
      "TACLR"
      "TAIE"
      "TAIFG"
+     
      ;;TAxCCTLn
      "TA0CCTL1" "TA0CCTL2" "TA0CCTL3" "TA0CCTL4" "TA0CCTL5" "TA0CCTL6"
      "CM"
@@ -118,10 +127,13 @@
      "COV"
      "CCIFG"
      ;;TAxCCRn
+     
      "TA0CCR0" "TA0CCR1" "TA0CCR2" "TA0CCR3" "TA0CCR4" "TA0CCR5" "TA0CCR6"
      "TA1CCR0"
+     
      ;;TAxIV
      "TAIV"
+     
      ;;TAxEX0
      "TAIDEX"
 
@@ -140,6 +152,7 @@
      "LCDSON"
      "LCDLP"
      "LCDON"
+     
      ;;LCDCCTL1
      "LCDCCTL1"
      "LCDNOCAPIE"
@@ -150,16 +163,19 @@
      "LCDBLKONIFG"
      "LCDBLKOFFIFG"
      "LCDFRMIFG"
+     
      ;;LCDCBLKCTL
      "LCDCBLKCTL"
      "LCDBLKDIVx"
      "LCDBLKPREx"
      "LCDBLKMODx"
+     
      ;;LCDCMEMCTL
      "LCDCMEMCTL"
      "LCDCLRBM"
      "LCDCLRM"
      "LCDDISP"
+     
      ;;LCDCVCTL
      "LCDCVCTL"
      "VLCDx"
@@ -172,40 +188,204 @@
      "VLCDREFx"
      "VLCDREF_0" "VLCDREF_1" "VLCDREF_2" "VLCDREF_3"
      "LCD2B"
+     
      ;;LCDCPCTL0
      "LCDCPCTL0 = 0xFFFF"
      "LCDSx"
+     
      ;;LCDCPCTL1
      "LCDCPCTL1 = 0xFC3F"
      "LCDSx"
+     
      ;;LCDCPCTL2
      "LCDCPCTL2 = 0x0FFF"
      "LCDSx"
+     
      ;;LCDCPCTL3
      "LCDCPCTL3"
      "LCDSx"
+     
      ;;LCDCCPCTL
      "LCDCCPCTL"
      "LCDCPCLKSYNC"
      "LCDCPDISx"
+     
      ;; LCDCIV
      "LCDCIV"
      "LCDCIVx"
+
+     ;; I2C
+     ;; UCBxCTLW0
+     "UCB0CTLW0"
+    ;; "UCB0CTLW0: 00; eUSCI_Bx Control Word Register 0."
+
+     ;; UCA10
+     "UCA10"
+    ;; "UCA10: 00; Own addressing mode select."
+    ;; "UCA10: 01; Modify only when UCSWRST = 1 "
+     "UCA10: 02; 0b = Own address is a 7-bit address."
+     "UCA10: 03; 1b = Own address is a 10-bit address."
+
+     ;; UCSLA10
+     "UCSLA10"
+    ;; "UCSLA10: 00; Slave addressing mode select"
+     "UCSLA10: 01; 0b = Address slave with 7-bit address"
+     "UCSLA10: 02; 1b = Address slave with 10-bit addrss"
+
+     ;; UCMM
+     "UCMM"
+    ;; "UCMM: 00; Multi-master environment select."
+    ;; "UCMM: 01; Modify only when UCSWRST = 1. "
+    ;; "UCMM: 02; 0b = Single master environment. "
+    ;; "UCMM: 03; 0b = There is no other master in the system. "
+     "UCMM: 04; 0b = The address compare unit is disabled. "
+     "UCMM: 05; 1b = Multi-master environment"
+
+     ;; UCMST
+     "UCMST"
+    ;; "UCMST: 00; Master mode select."
+    ;; "UCMST: 01; When a master loses arbitration in a "
+    ;; "UCMST: 02; multi-master environment (UCMM= 1), "
+   ;;  "UCMST: 03; the UCMST bit is automatically cleared and "
+   ;;  "UCMST: 04; the module acts as slave."
+     "UCMST: 05; 0b = Slave mode"
+     "UCMST: 06; 1b = Master mode"
+
+     ;; UCMODEx
+     "UCMODEx"
+     "UCMODE_0"
+     "UCMODE_1"
+     "UCMODE_2"
+     "UCMODE_3"
+    ;; "UCMODEx: 00; eUSCI_B mode."
+   ;;  "UCMODEx: 01; The UCMODEx bit select the synchronous mode "
+   ;;  "UCMODEx: 02; when UCSYNC = 1"
+   ;;  "UCMODEx: 03; Modify only when UCSWRST = 1"
+     "UCMODEx: 04; 00b = 3-pin SPI"
+     "UCMODEx: 05; 01b = 4-pin SPI(master or slave enabled if STE = 1)"
+     "UCMODEx: 06; 10b = 4-pin SPI(master or slave enabled if STE = 0)"
+     "UCMODEx: 07; 11b = I2C mode"
+
+     ;; UCSYNC
+     "UCSYNC"
+     ;;"UCSYNC: 00; Synchronous mode enable."
+     "UCSYNC: 01; For eUSCI_B always read and write as 1."
+
+     ;; UCSSELx
+     "UCSSELx"
+     "UCSSEL__UCLKI"
+     "UCSSEL__ACLK"
+     "UCSSEL__SMCLK"
+     ;;"UCSSEL_0"
+     ;;"UCSSEL_1"
+     ;;"UCSSEL_2"
+     ;;"UCSSEL_3"
+    ;; "UCSSELx: 00; eUSCI_B clock source select."
+    ;; "UCSSELx: 01; These bits select the BRCLK source clock."
+    ;; "UCSSELx: 02; These bits are ignored in slave mode."
+     "UCSSELx: 03; 00b = UCLKI"
+     "UCSSELx: 04; 01b = ACLK"
+     "UCSSELx: 05; 02b = SMCLK"
+     "UCSSELx: 06; 03b = SMCLK"
+
+     ;; UCTXACK
+     "UCTXACK"
+    ;; "UCTXACK: 00; Transmit ACK condition in slave mode "
+    ;; "UCTXACK: 01; with enabled address mask register."
+    ;; "UCTXACK: 02; After the UCSTTIFG has been set,"
+    ;; "UCTXACK: 03; the user needs to set or reset the UCTXACK flag to"
+    ;; "UCTXACK: 04; continue with the I2C protocol."
+    ;; "UCTXACK: 05; The clock is stretched until the UCBxCTL1 register"
+   ;;  "UCTXACK: 06; has been written."
+   ;;  "UCTXACK: 07; This bit is cleared automatically after "
+   ;;  "UCTXACK: 08; the ACK has been send."
+     "UCTXACK: 09; 0b = Do not acknowledge the slave addresss"
+     "UCTXACK: 10; 1b = Acknowledge the slave address"
+
+     ;; UCTR
+     "UCTR"
+    ;; "UCTR: 00; Transmitter/receiver"
+     "UCTR: 01; 0b = Receiver"
+     "UCTR: 02; 1b = Transmitter"
+
+     ;; UCTXNACK
+     "UCTXNACK"
+    ;; "UCTXNACK: 00; Transmit a NACK."
+    ;; "UCTXNACK: 01; UCTXNACK is automatically cleared after "
+    ;; "UCTXNACK: 02; a NACK is transmitted."
+    ;; "UCTXNACK: 03; Only for slave receiver mode."
+     "UCTXNACK: 04; 0b = Acknowledge normally"
+     "UCTXNACK: 05; 1b = Generate NACK"
+
+     ;; UCTXSTP
+     "UCTXSTP"
+   ;;  "UCTXSTP: 00; Transmit SOPT condition in master mode."
+   ;;  "UCTXSTP: 01; Ignored in slave mode."
+   ;;  "UCTXSTP: 03; In master receiver mode,"
+   ;;  "UCTXSTP: 04; the STOP condition is preceded by a NACK."
+   ;;  "UCTXSTP: 05; UCTXSTP is automatically cleared "
+   ;;  "UCTXSTP: 06; after STOP is generated"
+   ;;  "UCTXSTP: 07; This bit is a don't care,"
+   ;;  "UCTXSTP: 08; if automatic UCASTPx is different form 01 or 10."
+     "UCTXSTP: 09; 0b = No STOP generated"
+     "UCTXSTP: 10; 1b = Generate STOP"
+
+     ;; UCTXSTT
+     "UCTXSTT"
+    ;; "UCTXSTT: 00; Transmit START condition in master mode."
+    ;; "UCTXSTT: 01; Ignored in slave mode."
+    ;; "UCTXSTT: 02; In master receiver mode,"
+    ;; "UCTXSTT: 03; a repeated START condition is preceded by a NACK."
+    ;; "UCTXSTT: 04; UCTXSTT is automatically cleared after START"
+    ;; "UCTXSTT: 05; condition and address information is transmitted."
+    ;; "UCTXSTT: 06; Ignored in slave mode."
+     "UCTXSTT: 07; 0b = Do not generate START condition"
+     "UCTXSTT: 08; 1b = generate START condition"
+
+     ;; UCSWRST
+     "UCSWRST"
+     ;;"UCSWRST: 00; Software reset enable."
+     "UCSWRST: 01; 0b = Disabled. eUSCI_B released for operation."
+     "UCSWRST: 02; 1b = Enabled. eUSCI_B logic held in reset state."
+
+     ;; UCBxCTLW1
+     "UCBxCTLW1"
+     "UCB0CTLW1"
+    ;; "UCB0CTLW1: 00; eUSCI_Bx Control Word Register 1" 
+     "UCETXINT"
+     "UCCLTO"
+     "UCSTPNACK"
+     "UCSWACK"
+     "UCASTPx"
+     "UCGLITx"
+
+     ;; UCBxBRW
+     "UCBxBRW"
+
+     ;; UCBxSTATW
+     "UCBxSTATW"
+     "UCBCNTx"
+     "UCSCLLOW"
+     "UCGC"
+     "UCGC"
+     "UCBBUSY"
      
      
      "WDTCTL" "WDTPW" "WDTHOLD" "PM5CTL0" "LOCKLPM5"
      "SFRIFG1" "OFIFG"
      ;; msp430头文件名
-     "msp430fr6989.h"
+     "msp430.h"
      ;; C头文件名
      "stdio.h"
      ;; C语言 预处理
      "include" "ifndef" "define" "endif" "main"  "ifdef"
-     "uint_8" "uint16_t"
+     "elif" "error"
+     "uint8_t" "uint16_t" "uint32_t" 
      "__delay_cycles(8000 000)"
      "__bis_SR_register(LPM0_bits | GIE)"
      "__bis_SR_register(LPM0_bits + GIE)"
      "__no_operation()"
+     "__enable_interrupt()"
      
      "auto"   "break" "case" "char" "const" "continue" "default" "do"
      "double" "else" "enum" "extern" "float" "for" "goto" "if" "int" "long"
