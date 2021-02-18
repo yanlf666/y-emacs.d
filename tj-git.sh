@@ -15,7 +15,7 @@ git commit -a
 git remote rm origin
 
 
-git remote add origin https://github.com/yanlf666/y-emacs.d
+git remote add origin https://github.com/yanlf666/y-emacs
 
 
 
