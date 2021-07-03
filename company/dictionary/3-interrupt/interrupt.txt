@@ -1,0 +1,36 @@
+
+
+;; System Resets,Interrupt,and Operating Modes, System Control Module(SYS)
+;; SFRIE1
+	"SFRIE1 &= ~;
+	/*
+	JMBOUTIE: JTAG mailbox output interrupt enable.0b=disabled,1b=enabled
+	JMBINIE : JTAG mailbox input interrupt enable.0b=disabled,1b=enabled
+	NMIIE   : NMI pin interrupt enable. 0b=disabled,1b=enabled
+	VMAIE   : Vacant memory access interrupt enable.0b=disabled,1b=enabled
+	OFIE	   : Oscillator fault interrupt enable.0b=disabled,1b=enabled
+	WDTIE   : Watchdog timer interrupt enable.0b=disabled,1b=enabled
+	*/"
+
+;; SFRIFG1
+	"SFRIFG1 &= ~;
+	/*
+	JMBOUTIFG: JTAG mailbox output interrupt flag.0b=No,1b=interrupt pending
+	JMBINIFG : JTAG mailbox input interrupt flag.0b=No,1b=interrupt pending
+	NMIIFG	 : NMI pin interrupt flag.0b=No,1b=interrupt pending
+	OFIFG	 : Oscillator fault interrupt flag.0b=No,1b=interrupt pending
+	WDTIFG	 : Watchdog timer interrupt flag.0b=No,1b=interrupt pending
+	*/"
+
+;; SFRRPCR
+	"SFRRPCR &= ~;
+	/*
+	SYSRSTRE : Reset pin resistor enable. 0b=disabled,1b=Pullup or pulldown
+		   resistor at the RST/NMI pin is enabled.
+	SYSRSTUP : Reset resistor pin pullup or pulldown.0b=pulldown,1b=pullup
+	SYSNMIIES: NMI edge select.0b=NMI on rising edge,1b=NMI on falling edge
+	SYSNMI 	 : NMI select.0b=Reset function,1b=NMI function
+	*/"
+
+;; yinterrupt
+

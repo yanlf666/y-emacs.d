@@ -1,0 +1,42 @@
+
+
+;; Digital I/O Registers
+;; PxIV
+	"PxIV =;
+	/*
+	Portx interrupt vector value.
+	00h = No interrupt pending
+	02h = Interrupt Source:Portx.0 interrupt;Interrupt flag: PxIFG.0;
+	      Interrupt Priority: Highest
+	04h = Interrupt Source:Portx.1 interrupt; Interrupt Flag:PxIFG.1
+	06H = Interrupt Source:Portx.2 interrupt; Interrupt Flag:PxIFG.2
+	08h = Interrupt Source:Portx.3 interrupt; Interrupt Flag:PxIFG.3
+	0Ah = Interrupt Source:Portx.4 interrupt; Interrupt Flag:PxIFG.4
+	0Ch = Interrupt Source:Portx.5 interrupt; Interrupt Flag:PxIFG.5
+	0Eh = Interrupt Source:Portx.6 interrupt; Interrupt Flag:PxIFG.6
+	10h = Interrupt Source:Portx.7 interrupt; Interrupt Flag:PxIFG.7;
+	      Interrupt Priority:Lowest
+	*/"
+
+	"PxIES &= ~;
+	/*
+	Portx interrupt edge select
+	0b = PxIFG flag is set with a low-to-high transition
+	1b = PxIFG flag is set with a high-to-low transition
+	*/"
+
+	"PxIE &= ~;
+	/*
+	Portx interrupt enable
+	0b = Corresponding prot interrupt disabled
+	1b = Corresponding port interrupt enabled
+	*/"
+
+	"PxIFG &= ~;
+	/*
+	Portx interrupt flag
+	0b = No interrupt is pending
+	1b = Interrupt is pending
+	*/"
+	
+;; ydigital

@@ -1,0 +1,98 @@
+
+
+	"include" "msp430.h" "main(void)" "while(1)"
+	"defined" "elif defined" "error" "endif" "pragma"
+	"ifndef" "define"
+	
+	"__bis_SR_register(LPM0_bits + GIE);
+	/* Enter LPM0 interrupt. */
+	__no_operation();
+	/* For debugger */"
+
+
+	"void __attribute__ ((interrupt(TIMER0_A0_VECTOR))) Timer0_A0_ISR (void)
+	/* Timer0_A0 interrupt service routine */"
+	
+	"WDTCTL = WDTPW | WDTHOLD;
+	/* Stop WDT */"
+	
+	"PM5CTL0 &= ~LOCKLPM5;
+	/* Disable the GPIO power-on default high-impedance mode 
+	    to activate previously configured port settings */"
+
+;;Clock System (CS) Module
+;;CSCTL0
+	"CSCTL0_H = CSKEY >> 8;
+	/* Unlock CS registers */"
+;;	
+	"CSCTL0_H = 0;
+	/* Lock CS registers */"
+
+;;CSCTL1
+;;---DCORSEL
+	"CSCTL1   |= DCORSEL;
+	/* DCO range select . high speed devices */"
+	"CSCTL1   &= ~DCORSEL;
+	/* DCO range select . default low speed devices */"
+;;---DCOFSEL	  	
+	"CSCTL1 |= DCOFSEL_0;
+	/* 1MHz,DCORSEL=1 : 1MHz */"
+	"CSCTL1 |= DCOFSEL_3;
+	/* 4MHz,DCORSEL=1 :8MHz */"
+	"CSCTL1 |= DCOFSEL_4;
+	/* 5.33MHz,DCORSEL=1 : 16MHz */"
+	"CSCTL1 |= DCOFSEL_6;
+	/* 8MHz,DCORSEL=1 : 24MHz */"
+
+;;CSCTL2
+	"CSCTL2 = SELA__ | SELS__ | SELM__;
+	/* Selects ACLK VLOCLK LFMODCLK DCOCLK MODCLK LFXTCLK HFXTCLK */"
+;;---SELA
+	"SELA__Selects the ACLK source"
+	"SELA__LFXTCLK" "SELA__VLOCLK" "SELA__LFMODCLK"
+;;---SELS
+	"SELS__Selects the SMCLK source"
+	"SELS__LFXTCLK" "SELS__VLOCLK" "SELS__LFMODCLK"
+	"SELS__DCOCLK" "SELS__MODCLK" "SELS__HFXTCLK"
+;;---SELM
+	"SELM__Selects the MCLK source"
+	"SELM__LFXTCLK" "SELM__VLOCLK" "SELM__LFMODCLK"
+	"SELM__DCOCLK" "SELM__MODCLK" "SELM__HFXTCLK"
+
+;;CSCTL3
+	"CSCTL3 = DIVA__ | DIVS__ | DIVM__;
+	/* Divider 1 2 4 8 16 32 */"
+;;---DIVA
+	"DIVA__ACLK source divider"
+	"DIVA__1" "DIVA__2" "DIVA__4" "DIVA__8"
+	"DIVA__16" "DIVA__32"
+;;---DIVS
+	"DIVS__SMCLK source divider"
+	"DIVS__1" "DIVS__2" "DIVS__4" "DIVS__8"
+	"DIVS__16" "DIVS__32"
+;;---DIVM
+	"DIVM__MCLK source divider"
+	"DIVM__1" "DIVM_2" "DIVM__4" "DIVM__8"
+	"DIVM__16" "DIVM__32"
+
+;;CSCTL4
+	"CSCTL4 = HFXTBYPASS | HFXTOFF | LFXTBYPASS | LFXTOFF | VLOOFF | SMCLKOFF"
+	"CSCTL4 &= ~(HFXTBYPASS | HFXTOFF | LFXTBYPASS | LFXTOFF | VLOOFF | SMCLKOFF)"
+	;;
+	"CSCTL4 |= HFXTDRIVE_ | HFFREQ_ | LFXTDRIVE_;
+	/* LFXT and HFXT increased drive oscillator and
+	    HFXT bypass or crystal frequency. 0 1 2 3 */"
+	"HFXTDRIVE_0" "HFXTDRIVE_1" "HFXTDRIVE_2" "HFXTDRIVE_3"
+	"HFFREQ_0" "HFFREQ_1" "HFFREQ_2" "HFFREQ_3"
+	"LFXTDRIVE_0" "LFXTDRIVE_1" "LFXTDRIVE_2" "LFXTDRIVE_3"
+
+;;CSCTL5
+	"CSCTL5 &= ~(LFXTOFFG | HFXTOFFG)"
+	"CSCTL5 |= LFXTOFFG | HFXTOFFG"
+
+;;CSCTL6
+	"CSCTL6 |= MODCLKREQEN | SMCLKREQN | MCLKREQEN | ACLKREQEN"
+	"CSCTL6 &= ~(MODCLKREQEN | SMCLKREQN | MCLKREQEN | ACLKREQE)"
+
+;;ycsctl
+	

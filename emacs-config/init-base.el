@@ -1,7 +1,11 @@
 
 ;;字体
-(set-default-font "Hack Italic 12")
+;;(set-default-font "Fira Code   15" nil t)
+;;(set-frame-font "Fira Code 16" nil t)
+(set-default-font "Hack Italic 15" nil t)
+;;(set-default-font "DejaVu Sans Mono Oblique 15")
 
+;; 1Ii 0oO
 
 ;; init-base.el
 

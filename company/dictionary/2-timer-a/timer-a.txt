@@ -1,0 +1,58 @@
+
+
+;; Timer_A
+
+;; TAxCTL
+	"TA0CTL = TASSEL__ | MC__ | ID__;
+	/* TASSEL : clock source select. TAxCLK, ACLK, SMCLK, INCLK.
+	   ID	  : input divider. 1, 2, 4, 8.
+	   MC	  : Mode control. UP, CONTINUOUS, UP/DOWN */"
+	"TA0CTL = TACLR | TAIE | TAIFG;
+	/* TACLR  : Timer_A clear. 
+	   TAIE	  : Timer_A interrupt enable.
+	   TAIFG  : Timer_A interrupt flag. */"
+
+;; TAxR
+	"TAxR"
+
+;; TAxCCTLn
+	"TA0CCTL0 = ;
+	/* CM	  : Capture mode.rising edge,falling edge, 
+	   CCIS	  : Capture/compare input select.CCIxA, CCIxB, GND, VCC
+	   SCS	  : Synchronize capture source.
+	   	    0b=Asynchronous capture, 1b=Synchronous capture 
+	   SCCI	  : Synchronized capture/compare input.
+	   CAP 	  : Capture mode.0b=Compare mode, 1b=Capture mode
+	   OUTMOD : Output mode. OUTMOD_1, OUTMOD_2,...OUTMOD_7
+	   CCIE	  : Capture/compare interrupt enable.0b=disabled, 1b=enabled
+	   CCI	  : Capture/compare input.
+	   OUT 	  : Output. 0b=Output low, 1b=Output high.
+	   COV	  : Capture overflow.0b=No,1b=Capture overflow occurred.
+	   CCIFG  : Capture/compare interrupt flag. 0b=No, 1b=Interrupt pending */"
+
+;; TAxCCRn
+	"TA0CCR0 = ;
+	/* TAxCCRn: Compare mode.Capture mode. */"
+
+;; TAxIV
+	"TAxIV = TAIV__;
+	/* TAIV   : Timer_A interrupt vector value.
+	 	    00h = No
+		    02h = Interrupt Source.
+		    04h = Interrupt Source.
+		    06h = ...
+		    ...	    0Eh = Interrupt Source. */"
+
+;; TAxEX0
+	"TAxEX0 = ;
+	/* TAIDEX : Input divider expansion.
+	 	    000b = Divide by 1
+		    001b = Divide by 2
+		    010b = Divide by 3
+		    011b =
+	 ...	    company-20210606.135b = Divide by 8 */"
+
+;; ytimera
+
+
+
